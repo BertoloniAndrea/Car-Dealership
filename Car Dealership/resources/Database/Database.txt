@@ -1,0 +1,23 @@
+create database db_concessionaria
+
+create table account(
+	nome_account varchar(30) primary key,
+	nome varchar(50) not null,
+	cognome varchar(50) not null,
+	password varchar(256) not null,
+	admin_check boolean not null
+);
+
+create table auto(
+	id int primary key auto_increment,
+	marca varchar(50) not null,
+	modello varchar(50) not null,
+	targa char(8) not null unique,
+	immatricolazione date not null,
+	cilindrata int not null,
+	anno date not null,
+	km int not null,
+	prezzo int not null
+);
+
+insert into account set nome_account = "Admin", nome = "Admin", cognome = "Admin", password = "Admin", admin_check = true;
